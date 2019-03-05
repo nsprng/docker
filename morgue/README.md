@@ -7,7 +7,7 @@ Shipped without Database - use your own instead.
 ## Get started
 ```
 docker build -t <IMAGE_TAG> .
-docker run -dit -p 80:80 -e DB_HOST=mysql -e DB_PSWD=<YOUR_MYSQL_ROOT_PASSWORD> -e MRG_PSWD=<YOUR_MYSQL_MORGUE_PASSWORD> -e TZ="<YOUR_TIMEZONE>" <IMAGE_TAG>
+docker run -dit -p 80:80 -e DB_HOST=<YOUR_MYSQL_HOST> -e DB_PSWD=<YOUR_MYSQL_ROOT_PASSWORD> -e MRG_PSWD=<YOUR_MYSQL_MORGUE_PASSWORD> -e TZ="<YOUR_TIMEZONE>" <IMAGE_TAG>
 ```
 ## Example
 ### Build docker image:
