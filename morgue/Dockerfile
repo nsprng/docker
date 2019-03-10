@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+MAINTAINER nsprng
 
 RUN apt update && apt upgrade -y && apt install -y \
 	git \
@@ -38,6 +39,8 @@ RUN cd /var/www/morgue && \
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY create_db.sql /var/www/morgue/schemas
 COPY entrypoint.sh /entrypoint.sh
+
+EXPOSE 80
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apachectl", "-D", "FOREGROUND"]
