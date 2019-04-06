@@ -2,18 +2,9 @@ FROM ubuntu:16.04
 MAINTAINER nsprng
 
 RUN apt update && apt upgrade -y && apt install -y \
-	git \
-	unzip \
-	apache2 \
-	apache2-bin \
-	libapache2-mod-fastcgi \
-	libapache2-mod-php \
-	php7.0-mysql \
-	php7.0-imap \
-	php7.0-gd \
-	php-mbstring \
-	phpunit \
-	mysql-client && \
+      git unzip apache2 apache2-bin libapache2-mod-fastcgi \
+      libapache2-mod-php php7.0-mysql php7.0-imap \
+      php7.0-gd php-mbstring phpunit mysql-client && \
     apt autoclean
 
 COPY php7-fpm.conf /etc/apache2/conf-available
