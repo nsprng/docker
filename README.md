@@ -14,7 +14,7 @@ docker run -dit -p 80:80 --link <MYSQL_CONTAINER>:mysql \
 ## Example
 ### Build docker image:
 ```bash
-docker build -t nsprng/morgue:latest .
+docker build -t user/morgue:latest .
 ```
 ### Run MySQL: 
 ```bash
@@ -25,5 +25,5 @@ docker run -d --name db4morgue -e MYSQL_ROOT_PASSWORD=mysqlpassword mysql:5.7.25
 docker run -dit -p 80:80 --link db4morgue:mysql \
   -e DB_HOST=mysql -e DB_PSWD=mysqlpassword \
   -e MRG_PSWD=morguepassword -e TZ="Europe/London" \
-  --name morgue -h morgue nsprng/morgue:latest
+  --name morgue -h morgue user/morgue:latest
 ```
