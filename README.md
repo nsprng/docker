@@ -16,6 +16,10 @@ docker run -dit -p 80:80 --link <MYSQL_CONTAINER>:mysql \
 ```bash
 docker build -t user/morgue:latest .
 ```
+### Or pull my image from [Docker Hub](https://cloud.docker.com/u/nsprng/repository/docker/nsprng/morgue)
+```bash
+docker pull nsprng/morgue:1.0
+```
 ### Run MySQL: 
 ```bash
 docker run -d --name db4morgue -e MYSQL_ROOT_PASSWORD=mysqlpassword mysql:5.7.25
